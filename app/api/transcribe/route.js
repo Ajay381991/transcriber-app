@@ -1,4 +1,5 @@
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { NextResponse } from "next/server";
 
 const LANGUAGE_NAMES = {
@@ -11,7 +12,7 @@ const LANGUAGE_NAMES = {
 };
 
 export async function POST(req) {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
