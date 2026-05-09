@@ -10,12 +10,9 @@ export default function AdBanner({ slot, className = "" }) {
     } catch {}
   }, []);
 
-  if (!process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID) {
-    return (
-      <div className={`flex items-center justify-center bg-slate-900/40 border-y border-slate-800 text-slate-700 text-xs py-2 ${className}`}>
-        Ad space — configure NEXT_PUBLIC_ADSENSE_CLIENT_ID to enable
-      </div>
-    );
+  // Render nothing if AdSense client ID or slot ID is not configured
+  if (!process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || !slot) {
+    return null;
   }
 
   return (

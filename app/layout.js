@@ -8,7 +8,7 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 export const metadata = {
   title: "Audio Transcriber — Free AI Speech to Text",
   description:
-    "Transcribe any audio file to text for free using Groq Whisper AI. Supports 99 languages. Sign in with Google to get started.",
+    "Transcribe any audio file to text for free using Groq Whisper AI. Supports 99 languages. No sign-in required.",
 };
 
 export default function RootLayout({ children }) {
