@@ -35,7 +35,7 @@ export default function LandingPage() {
             Sign in with your Google account to start transcribing
           </p>
           <button
-            onClick={() => signIn("google", { callbackUrl: "/transcribe" })}
+            onClick={() => signIn("google", { callbackUrl: `${window.location.origin}/transcribe` })}
             className="w-full flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-3 px-6 rounded-xl transition-all shadow-lg"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
