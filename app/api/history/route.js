@@ -1,4 +1,5 @@
-import { auth } from "@/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
@@ -25,7 +26,7 @@ function writeHistory(userId, history) {
 }
 
 export async function GET() {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
   if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const history = readHistory(session.user.email);
@@ -33,7 +34,7 @@ export async function GET() {
 }
 
 export async function POST(req) {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
   if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { fileName, fileSize, language, transcript } = await req.json();
@@ -56,7 +57,7 @@ export async function POST(req) {
 }
 
 export async function DELETE(req) {
-  const session = await auth();
+  const session = await getServerSession(authOptions);
   if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { id } = await req.json();
