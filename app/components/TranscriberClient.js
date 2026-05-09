@@ -408,6 +408,10 @@ export default function TranscriberClient() {
       <footer className="text-slate-700 text-xs mt-6 text-center pb-4">
         Audio processed securely via Groq · Never stored on our servers ·{" "}
         <span className="text-slate-600">© {new Date().getFullYear()} dmnstech.com</span>
+        {" · "}
+        <a href="/privacy" className="text-slate-600 hover:text-slate-400 underline transition-colors">
+          Privacy Policy
+        </a>
       </footer>
     </div>
   );
