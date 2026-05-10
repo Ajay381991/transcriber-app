@@ -6,9 +6,41 @@ import "./globals.css";
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 
 export const metadata = {
-  title: "Audio Transcriber — Free AI Speech to Text",
+  title: "Free Audio Transcriber — AI Speech to Text in 99 Languages",
   description:
-    "Transcribe any audio file to text for free using Groq Whisper AI. Supports 99 languages. No sign-in required.",
+    "Transcribe any audio file to text instantly using Groq Whisper AI. Supports MP3, WAV, M4A and more. Free, no sign-in required. Translate to 25+ languages.",
+  keywords: "audio transcriber, speech to text, free transcription, whisper AI, audio to text, voice to text, transcribe MP3, transcribe WAV, AI transcription",
+  authors: [{ name: "dmnstech" }],
+  creator: "dmnstech",
+  metadataBase: new URL("https://transcribe.dmnstech.com"),
+  alternates: {
+    canonical: "https://transcribe.dmnstech.com",
+  },
+  openGraph: {
+    title: "Free Audio Transcriber — AI Speech to Text in 99 Languages",
+    description: "Transcribe any audio file to text instantly using Groq Whisper AI. Free, no sign-in required.",
+    url: "https://transcribe.dmnstech.com",
+    siteName: "Audio Transcriber",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Audio Transcriber — AI Speech to Text",
+    description: "Transcribe any audio file to text instantly using Groq Whisper AI. Free, no sign-in required.",
+    creator: "@dmnstech",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
