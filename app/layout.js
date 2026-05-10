@@ -14,6 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geist.variable} h-full`}>
+      <head>
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW674335DB" />
+        <script dangerouslySetInnerHTML={{
+          __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JW674335DB');`
+        }} />
+      </head>
       <body className="min-h-full flex flex-col bg-slate-950 font-sans antialiased">
         <Providers>{children}</Providers>
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
